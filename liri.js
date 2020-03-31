@@ -1,5 +1,3 @@
-
-
 //read and set any environment variables with the dotenv package( spotify keys)
 require("dotenv").config();
 
@@ -22,8 +20,13 @@ var moment = require("moment");
 // command input
 var input = process.argv[2];
 
-//arguments
+//arguments variable "band name", "song", etc.
 var query = "";
+
+// fs
+var fs = require("fs");
+
+
 
 //controls if spotify command is entered
 function songInfo() {
@@ -104,15 +107,26 @@ function movieInfo() {
 
 // controls do what it says command - does whatever  command line is on the random.txt file
 function whatItSays() {
-  var fs = require("fs");
+
   var data = fs.readFileSync("./random.txt", "utf8");
   // split parts of random.txt file up so could insert properly into each function
   input = data.substring(0, data.indexOf(","));
   query = data.substring(data.indexOf(","), data.length);
+  // re runs the command function with above params
   command();
 
 
 
+}
+
+// logging each command entered to a log.txt file
+function logText() {
+  let logged = input + ", '" + query + "'";
+  console.log(logged)
+  fs.appendFile("log.txt", "\n" + logged, function (err) {
+    if (err) { }
+    else { console.log("command logged") }
+  })
 }
 // command function that defines what input does based on command input (first argument in command line)
 function command() {
@@ -133,7 +147,12 @@ function command() {
   }
   // probably unncessary but it will be for me when testing
   else { console.log("That is not a proper command. => 'spotify-this-song' / 'concert-this' / 'movie-this' / 'do-what-it-says ") }
+
+  // logging each command entered to a log.txt file
+  logText();
+
 }
 
+// calling command function to take command and run functions based on it
 command();
 

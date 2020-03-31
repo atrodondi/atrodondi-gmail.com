@@ -1,0 +1,8 @@
+<<<<<<<LOGGED COMMANDS>>>>>>>>
+
+spotify-this-song, ''
+spotify-this-song, 'return of the mack '
+movie-this, ''
+movie-this, 'the rock '
+concert-this, 'carlossantana'
+concert-this, 'theroots'
