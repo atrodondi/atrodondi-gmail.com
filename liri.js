@@ -2,6 +2,7 @@
 require("dotenv").config();
 
 // globals
+
 // gets my spotify keys from keys.js and stores in Keys
 var keys = require("./keys.js");
 
@@ -73,7 +74,7 @@ function bandInfo() {
         let obj = response.data[i];
         console.log("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\nVenue: " + obj.venue.name, "\nLocation: " + obj.venue.city + ", " + obj.venue.country, "\nDate: " + moment(obj.datetime).format("MM/DD/YYYY"), "\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\n");
       }
-    });
+    }).catch(function (err) { console.log("Couldn't find what you are looking for---->" + err) });
   }
 }
 
@@ -101,7 +102,7 @@ function movieInfo() {
         let obj = response.data;
         console.log("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\nMovie Title: " + response.data.Title, "\nYear: " + obj.Year, "\nIMDB rating: " + obj.imdbRating, "\nRotten Tomatoes rating: " + obj.Ratings[1].Value, "\n Country of Origin: " + obj.Country, "\nLanguage: + " + obj.Language, "\nPlot: " + obj.Plot, "\nCast: " + obj.Actors, "\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\n\n");
       }
-    );
+    ).catch(function (err) { console.log("Couldn't find what you are looking for---->" + err) });
   }
 }
 
@@ -122,10 +123,9 @@ function whatItSays() {
 // logging each command entered to a log.txt file
 function logText() {
   let logged = input + ", '" + query + "'";
-  console.log(logged)
   fs.appendFile("log.txt", "\n" + logged, function (err) {
     if (err) { }
-    else { console.log("command logged") }
+    else { }
   })
 }
 // command function that defines what input does based on command input (first argument in command line)
