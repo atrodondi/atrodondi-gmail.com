@@ -154,7 +154,18 @@ function whatItSays() {
   }
 }
 
+function logCommand() {
+  
 
+  let logged = input + ", '" + query + "'";
+  fs.appendFile("log.txt", "\n" + logged, function (err) {
+    if (err) { }
+    else { }
+  })
+
+};
+
+logCommand();
 songInfo();
 bandInfo();
 movieInfo();

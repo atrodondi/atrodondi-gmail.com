@@ -35,16 +35,13 @@ I started out by first declaring all of the global variables and the getting the
 
 Each potential command that can be entered is handled by its own function. The appropriate function triggers depending on what the command input is. I chose to set it up so that the user did not need to put their search item in quotes on the command line.
 
-Once the user enters the command chosen from:
-    **spotify-this-song**
-    **movie-this**
-    **concert-this**
-    **do-what-it-says**
-They can enter whatever their search params are (unless you are using the do-what-it-says command):
-for example: ![concert_ex]("/images/concert_ex.png)
+Once the user enters the command they enter whatever their search params are (unless you are using the do-what-it-says command):
+
+for example: ***node .\liri.js concert-this blink 182*** entered into the command line would give you a the venue names, locations and dates of some upcoming Blink 182 shows!
 
 # App in action
-
+Here is a Gif of the App in action: 
+[App in action GIF link](https://recordit.co/whkWMW1Xeo)
 
 
 
