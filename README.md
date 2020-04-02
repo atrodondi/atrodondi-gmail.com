@@ -13,20 +13,22 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
 1. Check to make sure you have Node.js installed, if you do not, this application will not work.
 
-2. Get the dependecies : type *npm install* after opening the program in the terminal
+2. Get the dependecies : type ***npm install*** after opening the root file in the terminal.
 
 3. Now you are ready to go! If you have never used Node programs before, syntax for this program is:
 
-***node 'file_name.js' 'command' 'argument(can be multiple words with spaces in between words)'***
+    ***node 'file_name.js' 'command' 'argument(can be multiple words with spaces in between words)'***
 
 4. User should be able to enter any command followed by any number of words to get the corresponding information. If commands or querys are left blank or there is an error, there are default sets or informative logs that will tell you what went wrong.
 
  # Why is this useful?
 
- This application is a simple yet effective way to access information. It uses multiple APIs to funnel information to the user. APIs and technologies included in this application:
+ This application is a simple yet effective way to access information. It a very smooth and seamless way to access multiple APIs( and/or databases in future?) on the back end that  funnel information to the user, but for now to the console. APIs and technologies used in this application include:
  1. [Node-Spotify-Api](https://www.npmjs.com/package/node-spotify-api)
  2. [Axios](https://www.npmjs.com/package/axios) used to access [OMDB](http://www.omdbapi.com/) and [Bands in Town](https://www.artists.bandsintown.com/support/api-installation) APIs
  3. [Moment](https://www.npmjs.com/package/moment)
  4. [dotenv](https://www.npmjs.com/package/dotenv)
 
+ # Questions?
+    Developed and Maintained by Me, [A. Rodondi](https://github.com/atrodondi)
  
