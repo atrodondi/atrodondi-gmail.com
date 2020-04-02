@@ -1,3 +1,15 @@
 <<<<<<<LOGGED COMMANDS>>>>>>>>
 
 
+spotify-this-song, ''
+spotify-this-song, 'return of the mackk '
+spotify-this-song, 'return of the mack '
+movie-this, ''
+movie-this, 'the rockk '
+movie-this, 'the rock '
+concert-this, ''
+concert-this, 'carlos santanaaa '
+concert-this, 'carlos santana '
+do-what-it-says, ''
+spotify-this-song, 'asdfklj '
+spotify-this-song, 'return of the sandwich '

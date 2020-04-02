@@ -21,20 +21,27 @@ var moment = require("moment");
 // command input
 var input = process.argv[2];
 
-//arguments variable "band name", "song", etc.
+//arguments variable : i use this variable to log commands to txt.file as well
 var query = "";
+for (let i = 3; i < process.argv.length; i++) {
+  query += process.argv[i] + " ";
+}
+
+// had to make a new arguments variable only for bands api requests because the bands in town did not like spaces between its requests. 
+var query2 = "";
+for (let i = 3; i < process.argv.length; i++) {
+  query2 += process.argv[i];
+}
+
 
 // fs
 var fs = require("fs");
 
 
-
 //controls if spotify command is entered
 function songInfo() {
   if (input == "spotify-this-song") {
-    for (let i = 3; i < process.argv.length; i++) {
-      query += process.argv[i] + " ";
-    }
+
     //if song title is blank, defaults to The Sign by Ace of Base
     if (query == "") {
       spotify.search({ type: "track", query: "The Sign", limit: 1 }, function (err, data) {
@@ -66,19 +73,17 @@ function songInfo() {
 // controls if concert command is entered
 function bandInfo() {
   if (input == "concert-this") {
-    for (let i = 3; i < process.argv.length; i++) {
-      query += process.argv[i];
-    }
-    if (query == "") {
+
+    if (query2 == "") {
       console.log("Type in the name of a Band or Artist !")
     }
     else {
-      axios.get("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp").then(function (response) {
+      axios.get("https://rest.bandsintown.com/artists/" + query2 + "/events?app_id=codingbootcamp").then(function (response) {
         for (i in response.data) {
           let obj = response.data[i];
           console.log("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\nVenue: " + obj.venue.name, "\nLocation: " + obj.venue.city + ", " + obj.venue.country, "\nDate: " + moment(obj.datetime).format("MM/DD/YYYY"), "\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\n");
         }
-      }).catch(function (err) { console.log("Couldn't find what you are looking for---->" + err) });
+      }).catch(function (err) { console.log("Couldn't find what you are looking for. Check your search item---->" + err) });
     }
   }
 }
@@ -86,9 +91,7 @@ function bandInfo() {
 // controls if movie command is entered
 function movieInfo() {
   if (input == "movie-this") {
-    for (let i = 3; i < process.argv.length; i++) {
-      query += process.argv[i] + " ";
-    }
+
 
     // if query is blank, sets default to "Mr. Nobody" per instructions
     if (query == "") {
@@ -129,10 +132,8 @@ function whatItSays() {
 }
 // logging each command entered to a log.txt file
 function logText() {
-  for (let i = 3; i < process.argv.length; i++) {
-    query += process.argv[i] + " ";
-  }
-  let logged = process.argv[2] + ", '" + query + "'";
+
+  let logged = input + ", '" + query + "'";
   fs.appendFile("log.txt", "\n" + logged, function (err) {
     if (err) { }
     else { }

@@ -17,9 +17,9 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
 3. Now you are ready to go! If you have never used Node programs before, syntax for this program is:
 
-    ***node 'file_name.js' 'command' 'argument(can be multiple words with spaces in between words)'***
+    node 'file_name.js' 'command' 'argument'
 
-4. User should be able to enter any command followed by any number of words to get the corresponding information. If commands or querys are left blank or there is an error, there are default sets or informative logs that will tell you what went wrong.
+4. User should be able to enter any command followed by any number of words to get the corresponding information. The console will let you know if something went wrong, and if so, just check your commands or arguments and try again!
 
  # Why is this useful?
 
@@ -29,6 +29,15 @@ The Liri Node App is a simple Node.js program that takes in four different comma
  3. [Moment](https://www.npmjs.com/package/moment)
  4. [dotenv](https://www.npmjs.com/package/dotenv)
 
+
+# App orgnization
+I started out by first declaring all of the global variables and the getting the packages declared before anything else starts to get going.
+
+Each potential command that can be entered is handled by its own function. The appropriate function triggers depending on what the command input is.
+
+
+
+
  # Questions?
-    Developed and Maintained by Me, [A. Rodondi](https://github.com/atrodondi)
+Developed and Maintained by Me, [A. Rodondi](https://github.com/atrodondi)
  
