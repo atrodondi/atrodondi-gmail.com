@@ -19,7 +19,7 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
     **node file_name.js command argument**
 
-4. User should be able to enter any command followed by any number of words to get the corresponding information. The console will let you know if something went wrong, and if so, just check your commands or arguments and try again!
+4. User should be able to enter any command followed by any number of words to get the corresponding information. If a wrong command is entered, nothing will happen except the command will be logged and the command line will await a proper command with or without params. Simply retry trping command.
 
  # Why is this useful?
 
@@ -39,14 +39,17 @@ Once the user enters the command they enter whatever their search params are (un
 
 for example: ***node .\liri.js concert-this blink 182*** entered into the command line would give you a the venue names, locations and dates of some upcoming Blink 182 shows!
 
+Each command line that is passed through to the terminal is logged on the text file, followed shortly by the data that was requested and hopefully retrieved. If no data was found, only the command line is logged in the text file. so we can even leave a trail letting us know what kind of commands do not produce data/sucessful requests. (As far as catch functions, didn't go into to much depth, perhaps later I can incorporate inquirer and use that instead of command line and reprompt questions with the catch functions later on).
+
+There are probably a lot of other ways to do this, but this way seemed to work for me and provides a seemlingly intuitive for a user to quickly enter in commands and get results
+
+
+
 # App in action
 Here are some Gifs of the App in action!!!: 
 
 1. [Spotify, Movie, Concert Commands](https://recordit.co/whkWMW1Xeo) 
 2. [Do-What-it-Says Command with Random.txt](https://recordit.co/z9SSVs12UE)
-
-
-
 
 
 

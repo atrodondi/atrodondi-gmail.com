@@ -165,6 +165,7 @@ function logCommand() {
 
 };
 
+
 logCommand();
 songInfo();
 bandInfo();
