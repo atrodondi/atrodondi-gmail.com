@@ -15,6 +15,8 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
 2. Get the dependecies : type ***npm install*** after opening the root file in the terminal.
 
+![install](https://github.com/atrodondi/liri-node-app/blob/master/images/install.png)
+
 3. Now you are ready to go! If you have never used Node programs before, the syntax for this program is:
 
     ***node filename.js command search_item*** Like the picture below:
