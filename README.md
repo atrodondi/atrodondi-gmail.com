@@ -17,7 +17,7 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
 3. Now you are ready to go! If you have never used Node programs before, syntax for this program is:
 
-    ![example command](image/concert-ex.png)
+    ![example command](https://github.com/atrodondi/liri-node-app/blob/master/images/concert_ex.png)
 
 4. User should be able to enter any command followed by any number of words to get the corresponding information. If a wrong command is entered, nothing will happen except the command will be logged and the command line will await a proper command with or without params. Simply retry trping command.
 
