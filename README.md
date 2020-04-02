@@ -9,6 +9,8 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
 4. **do-what-it-says** *this command will do whatever is typed in the random.txt file*
 
+This data can be used in a number of ways. For this App, the data will be logged to the terminal and also logged to a text file.
+
 # How To Instructions:
 
 1. Check to make sure you have Node.js installed, if you do not, this application will not work.
@@ -27,13 +29,16 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
  # Why is this useful?
 
- This application is a simple yet effective way to access information. It a very smooth and seamless way to access multiple APIs( and/or databases in future?) on the back end that  funnel information to the user, but for now to the console. This could easily be implemented to get data to the user on the front end once this app is incorporated to it. 
+ This application is a simple yet effective way to access information. It a very smooth and seamless way to access multiple APIs( and/or databases in future?) on the back end/server side. In the future, this could easily be implemented to get data to the user on the front end once all parts are put together.
 
 
 # App orgnization
 I started out by first declaring all of the global variables and the getting the packages declared before anything else starts to get going.
 
-Each potential command that can be entered is handled by its own function. The appropriate function triggers depending on what the command input is. I chose to set it up so that the user did not need to put their search item in quotes on the command line.
+
+Then each potential command that can be entered is handled by its own function. The appropriate function triggers depending on what the command input is. I chose to set it up so that the user did not need to put their search item in quotes on the command line.
+
+![functions](https://github.com/atrodondi/liri-node-app/blob/master/images/function.png)
 
 Once the user enters the command they enter whatever their search params are (unless you are using the do-what-it-says command):
 
