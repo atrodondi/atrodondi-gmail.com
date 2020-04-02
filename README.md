@@ -40,8 +40,10 @@ Once the user enters the command they enter whatever their search params are (un
 for example: ***node .\liri.js concert-this blink 182*** entered into the command line would give you a the venue names, locations and dates of some upcoming Blink 182 shows!
 
 # App in action
-Here is a Gif of the App in action: 
+Here is a Gif of the App in action using the spotify-this-song, movie-this, and concert-this command: 
 [App in action GIF link](https://recordit.co/whkWMW1Xeo)
+[Do-What-it-Says Command](https://recordit.co/z9SSVs12UE)
+
 
 
 
