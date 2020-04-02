@@ -15,7 +15,9 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
 2. Get the dependecies : type ***npm install*** after opening the root file in the terminal.
 
-3. Now you are ready to go! If you have never used Node programs before, syntax for this program is:
+3. Now you are ready to go! If you have never used Node programs before, the syntax for this program is:
+
+    ***node filename.js command search_item*** Like the picture below:
 
     ![example command](https://github.com/atrodondi/liri-node-app/blob/master/images/concert_ex.png)
 
@@ -23,11 +25,7 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
  # Why is this useful?
 
- This application is a simple yet effective way to access information. It a very smooth and seamless way to access multiple APIs( and/or databases in future?) on the back end that  funnel information to the user, but for now to the console. APIs and technologies used in this application include:
- 1. [Node-Spotify-Api](https://www.npmjs.com/package/node-spotify-api)
- 2. [Axios](https://www.npmjs.com/package/axios) used to access [OMDB](http://www.omdbapi.com/) and [Bands in Town](https://www.artists.bandsintown.com/support/api-installation) APIs
- 3. [Moment](https://www.npmjs.com/package/moment)
- 4. [dotenv](https://www.npmjs.com/package/dotenv)
+ This application is a simple yet effective way to access information. It a very smooth and seamless way to access multiple APIs( and/or databases in future?) on the back end that  funnel information to the user, but for now to the console. This could easily be implemented to get data to the user on the front end once this app is incorporated to it. 
 
 
 # App orgnization
@@ -50,6 +48,14 @@ Here are some Gifs of the App in action!!!:
 
 1. [Spotify, Movie, Concert Commands](https://recordit.co/whkWMW1Xeo) 
 2. [Do-What-it-Says Command with Random.txt](https://recordit.co/z9SSVs12UE)
+
+# Technologies Included:
+
+APIs and technologies used in this application include:
+ 1. [Node-Spotify-Api](https://www.npmjs.com/package/node-spotify-api)
+ 2. [Axios](https://www.npmjs.com/package/axios) used to access [OMDB](http://www.omdbapi.com/) and [Bands in Town](https://www.artists.bandsintown.com/support/api-installation) APIs
+ 3. [Moment](https://www.npmjs.com/package/moment)
+ 4. [dotenv](https://www.npmjs.com/package/dotenv)
 
 
 
