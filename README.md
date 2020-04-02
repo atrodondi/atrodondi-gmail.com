@@ -39,9 +39,11 @@ Once the user enters the command they enter whatever their search params are (un
 
 for example: ***node .\liri.js concert-this blink 182*** entered into the command line would give you a the venue names, locations and dates of some upcoming Blink 182 shows!
 
-Each command line that is passed through to the terminal is logged on the text file, followed shortly by the data that was requested and hopefully retrieved. If no data was found, only the command line is logged in the text file. so we can even leave a trail letting us know what kind of commands do not produce data/sucessful requests. (As far as catch functions, didn't go into to much depth, perhaps later I can incorporate inquirer and use that instead of command line and reprompt questions with the catch functions later on).
 
-There are probably a lot of other ways to do this, but this way seemed to work for me and provides a seemlingly intuitive for a user to quickly enter in commands and get results
+
+Each command line that is passed through to the terminal is logged on the text file, along with the data requested if the request was sucessful. If no data was found, only the command line is logged in the text file. So we can even leave a trail letting us know what kind of commands do not produce data/sucessful requests. (As far as catch functions, didn't go into to much depth, perhaps later I can incorporate inquirer and use that instead of command line and reprompt questions with the catch functions later on).
+
+There are probably a lot of other ways to do this, but this way seemed to work for me and provides a seemlingly intuitive way for a user to quickly enter in commands and get results
 
 
 
