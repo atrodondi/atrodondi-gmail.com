@@ -6,6 +6,9 @@ require("dotenv").config();
 // gets my spotify keys from keys.js and stores in Keys
 var keys = require("./keys.js");
 
+// fs
+var fs = require("fs");
+
 // getting access to node spotify api and sets to variable
 var Spotify = require("node-spotify-api");
 
@@ -21,22 +24,15 @@ var moment = require("moment");
 // command input
 var input = process.argv[2];
 
+
 //arguments variable : i use this variable to log commands to txt.file as well
-var query = "";
-for (let i = 3; i < process.argv.length; i++) {
-  query += process.argv[i] + " ";
-}
+var query = process.argv.slice(3).join(" ");
 
 // had to make a new arguments variable only for bands api requests because the bands in town did not like spaces between its requests. 
 var query2 = "";
-for (let i = 3; i < process.argv.length; i++) {
+for (i = 3; i < process.argv.length; i++) {
   query2 += process.argv[i];
 }
-
-
-// fs
-var fs = require("fs");
-
 
 //controls if spotify command is entered
 function songInfo() {
@@ -49,7 +45,12 @@ function songInfo() {
           return console.log("No Song Found");
         }
         let obj = data.tracks.items[0];
-        console.log("\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\nAlbum: " + obj.album.name, "\nTrack Name: " + obj.name, "\nArtist: " + obj.artists[0].name, "\nPreview URL (if avail): " + obj.preview_url, '\n>>>>>>>>>>>>>>>>>>>>>>>>>', "\n");
+        let logged = "\n>>>>>>>>>>>>>>>>>>>>>>>>>\nAlbum: " + obj.album.name + "\nTrack Name: " + obj.name + "\nArtist: " + obj.artists[0].name + "\nPreview URL (if avail): " + obj.preview_url + "\n>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+        console.log(logged);
+        fs.appendFile("log.txt", "\n" + logged, function (err) {
+          if (err) { }
+          else { }
+        })
 
 
       });
@@ -59,7 +60,12 @@ function songInfo() {
           return console.log("No Song Found! Check Song Title.");
         }
         let obj = data.tracks.items[0];
-        console.log("\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\nAlbum: " + obj.album.name, "\nTrack Name: " + obj.name, "\nArtist: " + obj.artists[0].name, "\nPreview URL (if avail): " + obj.preview_url, '\n>>>>>>>>>>>>>>>>>>>>>>>>>', "\n");
+        let logged = "\n>>>>>>>>>>>>>>>>>>>>>>>>>\nAlbum: " + obj.album.name + "\nTrack Name: " + obj.name + "\nArtist: " + obj.artists[0].name + "\nPreview URL (if avail): " + obj.preview_url + "\n>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+        console.log(logged);
+        fs.appendFile("log.txt", "\n" + logged, function (err) {
+          if (err) { }
+          else { }
+        })
 
 
 
@@ -81,7 +87,12 @@ function bandInfo() {
       axios.get("https://rest.bandsintown.com/artists/" + query2 + "/events?app_id=codingbootcamp").then(function (response) {
         for (i in response.data) {
           let obj = response.data[i];
-          console.log("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\nVenue: " + obj.venue.name, "\nLocation: " + obj.venue.city + ", " + obj.venue.country, "\nDate: " + moment(obj.datetime).format("MM/DD/YYYY"), "\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\n");
+          let logged = "\n\n>>>>>>>>>>>>>>>>>>>>>>>>>\nVenue: " + obj.venue.name + "\nLocation: " + obj.venue.city + ", " + obj.venue.country + "\nDate: " + moment(obj.datetime).format("MM/DD/YYYY") + "\n>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+          console.log(logged);
+          fs.appendFile("log.txt", "\n" + logged, function (err) {
+            if (err) { }
+            else { }
+          })
         }
       }).catch(function (err) { console.log("Couldn't find what you are looking for. Check your search item---->" + err) });
     }
@@ -99,8 +110,14 @@ function movieInfo() {
 
 
         let obj = response.data;
+        let logged = "\n\n>>>>>>>>>>>>>>>>>>>>>>>>>" + "\nMovie Title: " + response.data.Title + "\nYear: " + obj.Year + "\nIMDB rating: " + obj.imdbRating + "\nRotten Tomatoes rating: " + obj.Ratings[1].Value + "\nCountry of Origin: " + obj.Country + "\nLanguage: + " + obj.Language + "\nPlot: " + obj.Plot + "\nCast: " + obj.Actors + "\n>>>>>>>>>>>>>>>>>>>>>>>>>" + "\n\n";
 
-        console.log("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\nMovie Title: " + response.data.Title, "\nYear: " + obj.Year, "\nIMDB rating: " + obj.imdbRating, "\nRotten Tomatoes rating: " + obj.Ratings[1].Value, "\n Country of Origin: " + obj.Country, "\nLanguage: + " + obj.Language, "\nPlot: " + obj.Plot, "\nCast: " + obj.Actors, "\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\n\n");
+        console.log(logged);
+        fs.appendFile("log.txt", "\n" + logged, function (err) {
+          if (err) { }
+          else { }
+        })
+
 
       })
     }
@@ -109,7 +126,13 @@ function movieInfo() {
       axios.get("http://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy").then(
         function (response) {
           let obj = response.data;
-          console.log("\n\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\nMovie Title: " + response.data.Title, "\nYear: " + obj.Year, "\nIMDB rating: " + obj.imdbRating, "\nRotten Tomatoes rating: " + obj.Ratings[1].Value, "\n Country of Origin: " + obj.Country, "\nLanguage: + " + obj.Language, "\nPlot: " + obj.Plot, "\nCast: " + obj.Actors, "\n>>>>>>>>>>>>>>>>>>>>>>>>>", "\n\n");
+          let logged = "\n\n>>>>>>>>>>>>>>>>>>>>>>>>>" + "\nMovie Title: " + response.data.Title + "\nYear: " + obj.Year + "\nIMDB rating: " + obj.imdbRating + "\nRotten Tomatoes rating: " + obj.Ratings[1].Value + "\nCountry of Origin: " + obj.Country + "\nLanguage: + " + obj.Language + "\nPlot: " + obj.Plot + "\nCast: " + obj.Actors + "\n>>>>>>>>>>>>>>>>>>>>>>>>>" + "\n\n";
+
+          console.log(logged);
+          fs.appendFile("log.txt", "\n" + logged, function (err) {
+            if (err) { }
+            else { }
+          })
         }
       ).catch(function (err) { console.log("Couldn't find what you are looking for---->" + err) });
     }
@@ -121,7 +144,7 @@ function whatItSays() {
   if (input == "do-what-it-says") {
 
 
-    var data = fs.readFileSync("./random.txt", "utf8");
+    let data = fs.readFileSync("./random.txt", "utf8");
     // split parts of random.txt file up so could insert properly into each function
     input = data.substring(0, data.indexOf(","));
     query = data.substring(data.indexOf(","), data.length);
@@ -130,17 +153,8 @@ function whatItSays() {
     movieInfo();
   }
 }
-// logging each command entered to a log.txt file
-function logText() {
 
-  let logged = input + ", '" + query + "'";
-  fs.appendFile("log.txt", "\n" + logged, function (err) {
-    if (err) { }
-    else { }
-  })
-}
 
-logText();
 songInfo();
 bandInfo();
 movieInfo();

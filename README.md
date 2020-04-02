@@ -17,7 +17,7 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 
 3. Now you are ready to go! If you have never used Node programs before, syntax for this program is:
 
-    node 'file_name.js' 'command' 'argument'
+    **node file_name.js command argument**
 
 4. User should be able to enter any command followed by any number of words to get the corresponding information. The console will let you know if something went wrong, and if so, just check your commands or arguments and try again!
 
@@ -33,7 +33,19 @@ The Liri Node App is a simple Node.js program that takes in four different comma
 # App orgnization
 I started out by first declaring all of the global variables and the getting the packages declared before anything else starts to get going.
 
-Each potential command that can be entered is handled by its own function. The appropriate function triggers depending on what the command input is.
+Each potential command that can be entered is handled by its own function. The appropriate function triggers depending on what the command input is. I chose to set it up so that the user did not need to put their search item in quotes on the command line.
+
+Once the user enters the command chosen from:
+    **spotify-this-song**
+    **movie-this**
+    **concert-this**
+    **do-what-it-says**
+They can enter whatever their search params are (unless you are using the do-what-it-says command):
+for example: ![concert_ex]("/images/concert_ex.png)
+
+# App in action
+
+
 
 
 
